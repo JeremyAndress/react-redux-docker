@@ -17,8 +17,12 @@ export default async function login(username,password,dispatch){
 		localStorage.setItem('token',res.data.access_token)
 		localStorage.setItem('rol',res.data.rol_name)
 		console.log(res)
+		return true
 	}catch(err){
+		console.log('aca')
 		dispatch(login_error(err))
+		console.log('here')
 		console.log(err)
+		return false
 	}
 }

@@ -1,13 +1,6 @@
-export const FETCH_PAGE_PENDING = 'FETCH_PAGE_PENDING';
 export const FETCH_PAGE_SUCCESS = 'FETCH_PAGE_SUCCESS';
 export const FETCH_PAGE_FAILED = 'FETCH_PAGE_FAILED';
 
-export const fetch_page = () =>{
-    return {
-        type:FETCH_PAGE_PENDING,
-        payload: null
-    }
-}
 export const load_page = (pages) =>{
     return {
         type:FETCH_PAGE_SUCCESS,

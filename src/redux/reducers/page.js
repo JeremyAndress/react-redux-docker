@@ -1,5 +1,5 @@
 import {
-    FETCH_PAGE_PENDING ,FETCH_PAGE_SUCCESS ,
+    FETCH_PAGE_SUCCESS ,
     FETCH_PAGE_FAILED
 } from '../actions/page';
 
@@ -11,12 +11,6 @@ const default_page = {
 
 const page = (state = default_page,action) =>{
     switch(action.type){
-        case FETCH_PAGE_PENDING:{
-            return {
-                ...state,
-                pending: true
-            }
-        }
         case FETCH_PAGE_SUCCESS: {
             return {
                 ...state,

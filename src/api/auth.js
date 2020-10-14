@@ -5,7 +5,7 @@ import {login_user,login_error} from '../redux/actions/user';
 export default async function login(username,password,dispatch){
 	try{
 		const res = await instance.post('login/',{
-			"email": username,
+			"username": username,
 			"password": password
 		})
 		dispatch(login_user({

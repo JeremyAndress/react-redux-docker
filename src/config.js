@@ -1,0 +1,1 @@
+export const API = "http://10.46.0.160:8005/api/v1/";

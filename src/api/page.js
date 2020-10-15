@@ -1,5 +1,4 @@
 import {instance} from './index'
-import { useHistory } from 'react-router-dom'
 import {load_page,error_page} from '../redux/actions/page';
 
 export default async function get_all_page(dispatch,page=1){
@@ -21,6 +20,7 @@ export default async function get_all_page(dispatch,page=1){
         const status = err.response ? err.response.status : null
         if (status === 401){
             localStorage.clear()
+            alert('La sesion ha expirado')
             window.location.reload();
         } 
         console.error(err)

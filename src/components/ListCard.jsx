@@ -17,7 +17,8 @@ const ListCard = () =>{
     return (
         <div className="wrap row">
             {pages_info.pending && <Loader/>}
-            {pages_info.data.map(page => <Card title={page.name} desc={page.desc} key={page.id} />)}
+            {pages_info.data.map(page => <Card title={page.name} desc={page.desc} 
+                key={page.id} path={page.image} url={page.url} />)}
         </div>
     )
 }

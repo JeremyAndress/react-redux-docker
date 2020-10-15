@@ -1,14 +1,34 @@
 import React from 'react';
 // import page_login from '../api/page_login';
 import {API} from '../config';
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+  
+  /*Use like so*/
+  
+async function timeSensativeAction(){ //must be async func
+    //do something here
+    await sleep(2000) //wait 5 seconds
+    //continue on...
+}
+
+
 const Card = ({title,desc,path,url}) =>{
     const image = `${API}get_image/?path=${path}`
     const new_windows = (url)=>{
         const win = window.open(url,'_blank')
         win && win.focus()
     }
-    const openPopUp= ()=>{
-        window.ventana_nueva =  window.open('http://10.46.0.160:8011/login/?next=/','mypopup','width:360,height:450');
+    const openPopUp= async ()=>{
+        window.ventana_nueva =  window.open('http://10.46.0.160:3001/login','mypopup','width:360,height:450');
+        window.ventana_nueva.focus()
+        await timeSensativeAction()
+        if(window.ventana_nueva){
+            console.log('ventana activa')
+            window.ventana_nueva.postMessage('hola app 1','http://10.46.0.160:3001/login');
+        }
         // const input = window.ventanita.document.querySelector('input[title=Buscar]')
         // if(input){input.value = "algo"} 
     }

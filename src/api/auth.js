@@ -19,10 +19,14 @@ export default async function login(username,password,dispatch){
 		console.log(res)
 		return true
 	}catch(err){
-		console.log('aca')
+		const error_code = err.code
 		dispatch(login_error(err))
-		console.log('here')
 		console.log(err)
+		if(error_code=='ECONNABORTED'){
+			alert('Error de Conexion')
+		}else{
+			alert('Usuario o Contraseña Incorrecta')
+		}
 		return false
 	}
 }

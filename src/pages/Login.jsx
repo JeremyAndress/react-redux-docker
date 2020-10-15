@@ -7,9 +7,6 @@ import logo from '../styles/img/qinblanco.png';
 
 function useColorBody() {
     useEffect(() => {
-        window.addEventListener('message',(e)=>{
-            console.log(e.data)
-        })
       document.body.style.backgroundColor = '#476B96'
   
       return () => {
@@ -41,7 +38,7 @@ const Login = () => {
             [e.target.name] :  e.target.value
         })
         const log_status = await login(datos.username,datos.password,dispatch)
-        log_status ? setAuth(true) : alert('Contraseña Incorrecta')
+        log_status && setAuth(true) 
         setLoading(false);
     }
 

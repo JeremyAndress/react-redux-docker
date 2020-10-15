@@ -7,6 +7,11 @@ const Card = ({title,desc,path,url}) =>{
         const win = window.open(url,'_blank')
         win && win.focus()
     }
+    const openPopUp= ()=>{
+        window.ventana_nueva =  window.open('http://10.46.0.160:8011/login/?next=/','mypopup','width:360,height:450');
+        // const input = window.ventanita.document.querySelector('input[title=Buscar]')
+        // if(input){input.value = "algo"} 
+    }
     // function openInNewTab() {
     //     console.log('nothing')
     //     //var javascriptToSend = encodeURIComponent("alert('Hi!');");
@@ -34,6 +39,7 @@ const Card = ({title,desc,path,url}) =>{
             <h2 className="animate-text">{desc}</h2>
             <a onClick={() => new_windows(url)}   className="animate-text">Entrar al Sitio</a>
             {/* <button onClick={page_login}>algo</button> */}
+            <button onClick={openPopUp}>presionar</button>
         </div>
 
         </div>

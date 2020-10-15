@@ -10,7 +10,7 @@ const sleep = (milliseconds) => {
   
 async function timeSensativeAction(){ //must be async func
     //do something here
-    await sleep(2000) //wait 5 seconds
+    await sleep(5000) //wait 5 seconds
     //continue on...
 }
 
@@ -22,12 +22,12 @@ const Card = ({title,desc,path,url}) =>{
         win && win.focus()
     }
     const openPopUp= async ()=>{
-        window.ventana_nueva =  window.open('http://10.46.0.160:3001/login','mypopup','width:360,height:450');
+        window.ventana_nueva =  window.open('http://10.46.0.160:8666/login/?next=/','mypopup','width:360,height:450');
         window.ventana_nueva.focus()
         await timeSensativeAction()
         if(window.ventana_nueva){
             console.log('ventana activa')
-            window.ventana_nueva.postMessage('hola app 1','http://10.46.0.160:3001/login');
+            window.ventana_nueva.postMessage({'username':'rformas','password':'rformas'},'http://10.46.0.160:8666/login/?next=/');
         }
         // const input = window.ventanita.document.querySelector('input[title=Buscar]')
         // if(input){input.value = "algo"} 

@@ -7,6 +7,7 @@ import logo from '../styles/img/qinblanco.png';
 
 function useColorBody() {
     useEffect(() => {
+
       document.body.style.backgroundColor = '#476B96'
   
       return () => {

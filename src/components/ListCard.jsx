@@ -9,7 +9,6 @@ const ListCard = () =>{
     const pages_info = useSelector(store => store.page) 
     const dispatch = useDispatch();
     const get_pages = async () => await get_all_page(dispatch,1)
-    console.log(pages_info.pending)
     if(pages_info.pending){
         get_pages()
     }

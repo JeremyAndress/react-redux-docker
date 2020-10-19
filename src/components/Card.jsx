@@ -8,12 +8,13 @@ const Cards = ({title,desc,path,url}) =>{
     const image = `${API}get_image/?path=${path}`
     const [read, SetRead] = useState(true)
 
-    const openPopUp= async ()=>{
-        window.ventana_nueva =  window.open('http://10.46.0.160:8666/cargando/','mypopup','width:360,height:450');
+    const openPopUp = async () => {
+        console.log(`url ${url}`)
+        window.ventana_nueva =  window.open(url,'mypopup','width:360,height:450');
         window.ventana_nueva.focus()
         await timeSensativeAction()
         if(window.ventana_nueva){
-            window.ventana_nueva.postMessage({'username':'rformas','password':'rformas'},'http://10.46.0.160:8666/cargando/');
+            window.ventana_nueva.postMessage({'username':'rformas','password':'rformas'},url);
         }
     }
     const read_more = () => SetRead(!read)

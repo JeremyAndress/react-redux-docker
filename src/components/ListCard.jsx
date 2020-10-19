@@ -6,7 +6,6 @@ import get_all_page from '../api/page';
 import CardDeck from 'react-bootstrap/CardDeck'
 
 const ListCard = () =>{
-    // const [isLoading,setLoading] = useState(true)
     const pages_info = useSelector(store => store.page) 
     const dispatch = useDispatch();
     const get_pages = async () => await get_all_page(dispatch,1)

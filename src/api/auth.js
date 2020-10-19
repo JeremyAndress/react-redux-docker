@@ -22,7 +22,7 @@ export default async function login(username,password,dispatch){
 		const error_code = err.code
 		dispatch(login_error(err))
 		console.log(err)
-		if(error_code=='ECONNABORTED'){
+		if(error_code === 'ECONNABORTED'){
 			alert('Error de Conexion')
 		}else{
 			alert('Usuario o Contraseña Incorrecta')

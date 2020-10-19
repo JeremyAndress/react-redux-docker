@@ -16,27 +16,41 @@
     font-family: inherit;
     font-size: 0.95em;
   }
+  .login-header {
+    background:$primary-color;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    width: 120%;
+  }
   .login-container {
     background: #ebebeb;
     padding: 12px;
     width: 120%;
   }
+  .login-container,
+  .login-header{
+    @media screen and (max-width: $break-small) {
+        width: 225%;
+    }
+  }
+  input{
+    @media screen and (max-width: $break-small) {
+        padding: 5px;
+    }  
+  }
+  @media screen and (max-width: $break-small) {
+    margin: 15%;
+  }  
+  
 }
 
 .login-header,
 .login p {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.login-header {
-  background:$primary-color;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  width: 120%;
 }
 
 .login input[type="email"],
@@ -60,7 +74,7 @@
 }
 
 .login input[type="submit"]:hover {
-  background: #17c;
+  background:$secondary-color;
 }
 
 /* Buttons' focus effect */

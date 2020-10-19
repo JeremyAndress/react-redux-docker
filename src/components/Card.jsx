@@ -34,7 +34,7 @@ const Cards = ({title,desc,path,url}) =>{
     }
 
     return (
-        <div className="col">
+        <div className="col-lg-4">
         <Card className="card-qin">
         <Card.Img className="card-img-top-qin" src={image} />
             <Card.Body>

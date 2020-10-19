@@ -14,15 +14,15 @@ const ListCard = () =>{
     }
     
     return (
-        <div className="container">
-        <div className="wrap row">
+
+        <div className="row">
             {pages_info.pending && <Loader/>}
             <CardDeck className="card-deck-qin">
             {pages_info.data.map(page => <Cards title={page.name} desc={page.desc} 
                 key={page.id} path={page.image} url={page.url} />)}
             </CardDeck>
         </div>
-        </div>
+        
     )
 }
 export default ListCard;

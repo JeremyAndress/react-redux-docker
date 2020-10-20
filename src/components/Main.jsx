@@ -16,7 +16,6 @@ const Main = () => {
 		return <div></div>
 	}
 	return(
-
 		<Navbar className="nav-qin" variant="dark"   expand="lg">
 		<Navbar.Brand href="/"><img src={logo} className="logo m-n3" alt="logo qin"/></Navbar.Brand>
 		<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,6 +37,5 @@ const Main = () => {
 		</Navbar>
 	)
 }
-
 
 export default Main;

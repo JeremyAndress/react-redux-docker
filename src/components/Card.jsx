@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
 import {API} from '../config';
+import word from '../styles/svg/file-word.svg'
 import timeSensativeAction from '../utils/sleep';
 import Card from 'react-bootstrap/Card';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const Cards = ({title,desc,path,url}) =>{
 
@@ -20,7 +23,7 @@ const Cards = ({title,desc,path,url}) =>{
     const read_more = () => SetRead(!read)
 
     const desc_more = () => {
-        if(desc.length >= 25){
+        if(desc.length > 25){
             return (
                 <>
                 {desc.slice(0,25)}
@@ -34,12 +37,20 @@ const Cards = ({title,desc,path,url}) =>{
     }
 
     return (
-        <div className="col-lg-4">
+        <div className="col-lg-3 col-md-6">
         <Card className="card-qin">
         <Card.Img className="card-img-top-qin" src={image} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{desc_more()}</Card.Text>
+
+                <DropdownButton id="btn-dropdown-custom" title="Descargar Archivos">
+                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Brochure</Dropdown.Item>
+                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Documento Técnico</Dropdown.Item>
+                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Manual</Dropdown.Item>
+                </DropdownButton>
+
+                <br/>
                 <button className="btn btn-block btn-primary-qin" onClick={openPopUp}>Ir al sitio</button>
             </Card.Body>
         </Card>

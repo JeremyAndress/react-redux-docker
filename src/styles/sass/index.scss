@@ -10,6 +10,9 @@
   
 .card-qin{
     width: 20rem;
+    @media screen and (max-width: $break-small) {
+        width: 19rem;
+    }
 }
 .card-deck-qin{
     padding-top: 2rem;
@@ -41,14 +44,25 @@
     left: auto !important;
     right: 0px;
 }
-// .wrap
-// {
-//   margin:50px auto 0 auto;
-//   width:100%;
-//   display:flex;
-//   align-items:space-around;
-//   @media screen and (max-width: $break-small) {
-//     display: block !important;
-//     height: 100%;
-//   }
-// }
+
+#btn-dropdown-custom{
+    width: 100% !important;
+    background-color: white;
+    color:$secondary-color;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    border-bottom-color: $secondary-color;
+}
+
+.inside-btn-dropdown{
+    img{
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+    }
+    &:focus{
+        color:white;
+        background-color: $secondary-color !important;
+    }  
+}

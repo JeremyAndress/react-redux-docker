@@ -1,6 +1,10 @@
 import React from 'react';
-
+import ListGest from '../components/List/ListGest'
 const Gestion = () => (
-    <div>Gestion</div>
+    <div>
+        <div className="container-fluid">
+            <ListGest/>
+        </div>
+    </div>
 )
 export default Gestion;

@@ -1,14 +1,18 @@
 import React from 'react';
-import {useSelector,useDispatch} from 'react-redux';
-import Cards from './Card';
-import Loader from './Loader'
-import get_all_page from '../api/page';
 import CardDeck from 'react-bootstrap/CardDeck'
+import {useSelector,useDispatch} from 'react-redux';
+import Cards from '../Card';
+import Loader from '../Loader'
+import get_all_page from '../../api/page';
+import {load_page,error_page} from '../../redux/actions/sva';
 
-const ListCard = () =>{
-    const pages_info = useSelector(store => store.page) 
+const ListSva = () =>{
+    const pages_info = useSelector(store => store.page_sva) 
     const dispatch = useDispatch();
-    const get_pages = async () => await get_all_page(dispatch,1)
+    const get_pages = async () => await get_all_page(
+        dispatch,load_page,error_page,1,1
+    )
+    console.log('Render SVA!')
     if(pages_info.pending){
         get_pages()
     }
@@ -25,4 +29,4 @@ const ListCard = () =>{
         
     )
 }
-export default ListCard;
+export default ListSva;

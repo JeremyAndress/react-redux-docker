@@ -1,7 +1,7 @@
 import {
-    FETCH_PAGE_SUCCESS ,
-    FETCH_PAGE_FAILED
-} from '../actions/page';
+    FETCH_GST_SUCCESS ,
+    FETCH_GST_FAILED
+} from '../actions/gst';
 
 const default_page = {
     data: [],
@@ -9,16 +9,16 @@ const default_page = {
     error: false
 };
 
-const page = (state = default_page,action) =>{
+const page_gst = (state = default_page,action) =>{
     switch(action.type){
-        case FETCH_PAGE_SUCCESS: {
+        case FETCH_GST_SUCCESS: {
             return {
                 ...state,
                 data: action.payload,
                 pending: false
             }
         }
-        case FETCH_PAGE_FAILED: {
+        case FETCH_GST_FAILED: {
             return {
                 ...state,
                 error: true,
@@ -28,4 +28,4 @@ const page = (state = default_page,action) =>{
         default: return state
     }
 }
-export default page;
+export default page_gst;

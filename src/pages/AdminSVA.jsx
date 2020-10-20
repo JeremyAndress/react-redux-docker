@@ -1,11 +1,11 @@
 import React from 'react';
-import ListCard from '../components/ListCard';
+import ListSva from '../components/List/ListSva';
 
 const AdminSVA = () =>{
     return (
     <div>
         <div className="container-fluid">
-            <ListCard/>
+            <ListSva/>
         </div>
     </div>
     )

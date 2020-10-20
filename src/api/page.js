@@ -1,22 +1,23 @@
 import {instance} from './index'
-import {load_page,error_page} from '../redux/actions/page';
 
-export default async function get_all_page(dispatch,page=1){
+export default async function get_all_page(
+    dispatch,load,error,type=1,page=1
+){
     try{
         const headers = {
             'token': localStorage.getItem('token')
         }
         const params = { 
-            params: { page: page } ,
+            params: { page: page, type_of: type } ,
             headers: headers
         }
-        const res = await instance.get('get_all_page/',params)
+        const res = await instance.get('get_page_type/',params)
         const data = res.data.data
         console.log(data)
-        dispatch(load_page(data))
+        dispatch(load(data))
         return true
     }catch(err){
-        dispatch(error_page())
+        dispatch(error())
         const status = err.response ? err.response.status : null
         if (status === 401){
             localStorage.clear()

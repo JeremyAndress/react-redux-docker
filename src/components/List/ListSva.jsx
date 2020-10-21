@@ -1,7 +1,7 @@
 import React from 'react';
 import CardDeck from 'react-bootstrap/CardDeck'
 import {useSelector,useDispatch} from 'react-redux';
-import Cards from '../Card';
+import CardCx from '../Card/CardCx';
 import Loader from '../Loader'
 import get_all_page from '../../api/page';
 import {load_page,error_page} from '../../redux/actions/sva';
@@ -22,8 +22,9 @@ const ListSva = () =>{
         <div className="row">
             {pages_info.pending && <Loader/>}
             <CardDeck className="card-deck-qin">
-            {pages_info.data.map(page => <Cards title={page.name} desc={page.desc} 
-                key={page.id} path={page.image} url={page.url} />)}
+            {pages_info.data.map(page => <CardCx title={page.name} desc={page.desc} 
+                key={page.id} path={page.image} url={page.url} brochure={page.brochure} 
+                manual={page.manual} technical_doc={page.technical_doc}/>)}
             </CardDeck>
         </div>
         

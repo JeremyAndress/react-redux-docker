@@ -1,12 +1,10 @@
 import React,{useState} from 'react';
-import {API} from '../config';
-import word from '../styles/svg/file-word.svg'
-import timeSensativeAction from '../utils/sleep';
 import Card from 'react-bootstrap/Card';
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+import timeSensativeAction from '../../utils/sleep';
+import {API} from '../../config';
+import Dbtn from '../Dbtn';
 
-const Cards = ({title,desc,path,url}) =>{
+const CardCx = ({title,desc,path,url,brochure,manual,technical_doc}) =>{
 
     const image = `${API}get_image/?path=${path}`
     const [read, SetRead] = useState(true)
@@ -35,7 +33,6 @@ const Cards = ({title,desc,path,url}) =>{
         }
         return <>{desc}</> 
     }
-
     return (
         <div className="col-lg-3 col-md-6">
         <Card className="card-qin">
@@ -43,13 +40,7 @@ const Cards = ({title,desc,path,url}) =>{
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{desc_more()}</Card.Text>
-
-                <DropdownButton id="btn-dropdown-custom" title="Descargar Archivos">
-                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Brochure</Dropdown.Item>
-                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Documento Técnico</Dropdown.Item>
-                    <Dropdown.Item as="button" className="inside-btn-dropdown"><img src={word} alt="icon word"/>Descargar Manual</Dropdown.Item>
-                </DropdownButton>
-
+                <Dbtn brochure={brochure} technical_doc={technical_doc} manual={manual}/>
                 <br/>
                 <button className="btn btn-block btn-primary-qin" onClick={openPopUp}>Ir al sitio</button>
             </Card.Body>
@@ -57,4 +48,4 @@ const Cards = ({title,desc,path,url}) =>{
         </div>
     ) 
 }
-export default Cards;
+export default CardCx;

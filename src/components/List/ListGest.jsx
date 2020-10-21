@@ -1,7 +1,7 @@
 import React from 'react';
 import CardDeck from 'react-bootstrap/CardDeck'
 import {useSelector,useDispatch} from 'react-redux';
-import Cards from '../Card';
+import CardSp from '../Card/CardSp';
 import Loader from '../Loader'
 import get_all_page from '../../api/page';
 import {load_gst,error_gst} from '../../redux/actions/gst';
@@ -22,7 +22,7 @@ const ListGest = () =>{
         <div className="row">
             {pages_info.pending && <Loader/>}
             <CardDeck className="card-deck-qin">
-            {pages_info.data.map(page => <Cards title={page.name} desc={page.desc} 
+            {pages_info.data.map(page => <CardSp title={page.name} desc={page.desc} 
                 key={page.id} path={page.image} url={page.url} />)}
             </CardDeck>
         </div>

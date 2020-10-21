@@ -11,6 +11,7 @@ import Soporte from './pages/Soporte';
 import Gestion from './pages/Gestion'
 import Admin from './pages/Admin';
 import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 import store from './redux/store';
 
 
@@ -24,6 +25,7 @@ ReactDOM.render(
         <AuthRoute exact path="/gestion" component={Gestion}  requiredRoles={['admin']}/>
         <AuthRoute exact path="/admin" component={Admin}  requiredRoles={['admin']}/>
         <Route exact path="/login" component={Login}/>
+        <Route component={NotFound}/>
       </Switch>
     </Router>
 

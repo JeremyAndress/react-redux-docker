@@ -1,0 +1,10 @@
+@mixin dropdown-inside {
+    &:hover{
+        color: inherit;
+        text-decoration: none;
+    }
+    &:focus,&:active{
+        color:white;
+        background-color: $secondary-color !important;
+    }
+}

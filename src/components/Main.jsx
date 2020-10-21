@@ -23,12 +23,6 @@ const Main = () => {
 			<Nav className="ml-auto">
 			<Nav.Item><NavLink className="nav-link" exact to="/">Administración SVA</NavLink></Nav.Item>
 			<Nav.Item><NavLink className="nav-link" to="/admin">Otros Administradores</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/admin">Web Services</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/admin">Launchpad Servicios</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/soporte">Soporte QIN</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/admin">Analitica</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/gestion">Gestión QIN</NavLink></Nav.Item>
-			<Nav.Item><NavLink className="nav-link" to="/admin">Contáctanos</NavLink></Nav.Item>
 			<NavDropdown title={`Bienvenido, ${username}`} id="nav-dropdown">
 			<NavDropdown.Item onClick={logout}>Cerrar Sesion</NavDropdown.Item>
 			</NavDropdown>

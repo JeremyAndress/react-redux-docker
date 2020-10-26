@@ -1,0 +1,18 @@
+.spinner {
+    margin-top: 20px;
+    --size: 120px;
+    --border: 8px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    position: relative;
+    border: var(--border) solid lighten(#a7a8a9, 5%);
+    border-right: var(--border) solid $secondary-color;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+}

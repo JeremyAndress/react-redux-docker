@@ -51,8 +51,8 @@ const Login = () => {
 
                 <h2 className="login-header"><img src={logo} width="30%" alt="logo"/></h2>
                 <form className="login-container" onSubmit={handleSubmit}>
-                <p><input onChange={handleChange} type="text" placeholder="Usuario" value={datos.username} name="username"/></p>
-                <p><input onChange={handleChange} type="text" placeholder="Contraseña" value={datos.password} name="password"/></p>
+                <p><input onChange={handleChange} type="text" placeholder="Usuario" value={datos.username} name="username" required/></p>
+                <p><input onChange={handleChange} type="text" placeholder="Contraseña" value={datos.password} name="password" required/></p>
     
                 <p><input type="submit" value="Iniciar Sesión"/></p>
                 {loading && <Loader/>}

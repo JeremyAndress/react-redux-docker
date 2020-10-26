@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import Spinner from '../components/Spinner';
+import Loader from '../components/Loader';
 import login from '../api/auth';
 import logo from '../styles/img/qinblanco.png';
 
@@ -55,7 +55,7 @@ const Login = () => {
                 <p><input onChange={handleChange} type="text" placeholder="Contraseña" value={datos.password} name="password"/></p>
     
                 <p><input type="submit" value="Iniciar Sesión"/></p>
-                {loading && <Spinner/>}
+                {loading && <Loader/>}
                 </form>
             </div>
         )

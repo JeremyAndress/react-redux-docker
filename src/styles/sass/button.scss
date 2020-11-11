@@ -1,0 +1,24 @@
+.btn-primary-qin{
+    background-color: $primary-color !important;
+    color: white !important;
+    &:hover{
+        background-color: $secondary-color !important;
+    }  
+}
+
+.btn-success-qin{
+    background-color: $success-color !important;
+    color: $success-color-letters !important;
+    &:hover{
+        background-color: $success-color-hover !important;
+        color: white !important;
+    }  
+}
+.btn-danger-qin{
+    background-color: $danger-color !important;
+    color: $danger-color-letters !important;
+    &:hover{
+        background-color: $danger-color-letters !important;
+        color: white !important;
+    }  
+}

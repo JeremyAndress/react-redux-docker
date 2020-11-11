@@ -1,11 +1,10 @@
 @import './root.scss';
-@import './mixins.scss';
 @import './login.scss';
+@import './mixins.scss';
 @import './spinner.scss';
-
-.body-test{
-    background-color: #476B96;
-}
+@import './pag.scss';
+@import './button.scss';
+@import './text.scss';
 
 .logo {
     height : 97px
@@ -36,14 +35,6 @@
 
 .read-more{
     display: none;
-}
-
-.btn-primary-qin{
-    background-color: $primary-color !important;
-    color: white !important;
-    &:hover{
-        background-color: $secondary-color !important;
-    }  
 }
 
 .notfound-img{
@@ -92,4 +83,10 @@
 .not-style-a{
     color: inherit;
     @include dropdown-inside;
+}
+
+.table-head-qin{
+    background-color: $primary-color;
+    color: white;
+    // border-bottom: 2px solid #f2f2f2;
 }
